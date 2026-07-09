@@ -30,3 +30,12 @@ console.log(`using p2: ${p2.xp2}`);
 console.log(`using p3: ${p3.xp2}`); //p3 can access property of p2, p1 and its own
 console.log(`using p3: ${p3.xp1}`);
 console.log(`using p3: ${p3.xp3}`);
+
+//If a property exists in both the object and its prototype, the object's own property takes priority.
+const person = {
+  country: "India",
+};
+const student = Object.create(person);
+student.country = "USA";
+
+console.log(student.country); // output: USA
