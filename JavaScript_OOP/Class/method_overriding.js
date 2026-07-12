@@ -19,7 +19,7 @@ class Tiger extends Animal {
     console.log("Roar");
   }
 }
-
+1 
 const dog = new Dog();
 dog.sound();
 
