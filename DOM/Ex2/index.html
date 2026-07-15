@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Selectors Practice</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background: #f4f4f4;
+    }
+
+    h1 {
+      color: darkblue;
+    }
+
+    section {
+      background: white;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px gray;
+    }
+
+    .student {
+      color: blue;
+    }
+
+    .fruit {
+      color: green;
+    }
+
+    .highlight {
+      background: yellow;
+    }
+
+    button {
+      margin: 5px;
+      padding: 8px 15px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1 id="Title"> <b>JavaScript</b> DOM Selectors Practice</h1>
+
+  <!-- Section 1 -->
+  <section id="studentsSection">
+
+    <h2>Students</h2>
+
+    <p class="student">Sandesh</p>
+    <p class="student">Amit</p>
+    <p class="student">Rutik</p>
+    <p class="student">Sahil</p>
+
+  </section>
+
+  <!-- Section 2 -->
+  <section>
+
+    <h2>Fruits</h2>
+
+    <ul id="fruitList">
+      <li class="fruit">Apple</li>
+      <li class="fruit">Banana</li>
+      <li class="fruit">Mango</li>
+      <li class="fruit">Orange</li>
+    </ul>
+
+  </section>
+
+  <!-- Section 3 -->
+  <section>
+
+    <h2>Boxes</h2>
+
+    <div class="box highlight">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box highlight">Box 3</div>
+    <div class="box">Box 4</div>
+
+  </section>
+
+  <!-- Section 4 -->
+  <section>
+
+    <h2>Buttons</h2>
+
+    <button id="btn1">Button 1</button>
+    <button class="btn">Button 2</button>
+    <button class="btn">Button 3</button>
+    <button class="btn">Button 4</button>
+
+  </section>
+  <!-- querySelector() -->
+  <script>
+    //by id #
+    const title = document.querySelector("#Title");
+    console.log(title.innerHTML);
+
+    //by class .
+    const students = document.querySelectorAll(".student");
+    students.forEach((student) => {
+      console.log(student.textContent);
+    });
+
+    //by tag 
+    const fruits = document.querySelectorAll("li");
+    fruits.forEach((fruit) => {
+      //console.log(fruit.textContent)
+      fruit.style.backgroundColor = "pink";
+    })
+
+  </script>
+
+</body>
+
+</html>
