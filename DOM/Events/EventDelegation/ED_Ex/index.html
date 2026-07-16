@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Delegation With Example</title>
+</head>
+
+<body>
+
+  <ul id="fruits">
+    <li>Apple</li>
+    <li>Mango</li>
+    <li>Orange</li>
+  </ul>
+
+  <div id="buttons">
+    <button class="btn">First</button>
+    <button class="btn">Second</button>
+    <button class="btn">Third</button>
+    <button class="btn">Fourth</button>
+    <button class="btn">Fifth</button>
+  </div>
+</body>
+
+<script>
+
+  //Event Delegation is a technique where a parent element handles events for its child elements using event bubbling.
+  const fruits = document.querySelector("#fruits");
+  fruits.addEventListener("click", (event) => {
+    console.log(event.target.textContent);
+  });
+
+  const buttons = document.querySelector("#buttons");
+  buttons.addEventListener("click", (event) => {
+    console.log(event.target.textContent, "Button clicked");
+  })
+
+</script>
+
+</html>

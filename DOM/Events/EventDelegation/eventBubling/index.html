@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Bubling Example</title>
+</head>
+
+<body>
+  <div id="parent">
+    Parent
+    <button id="child">Click Me</button>
+  </div>
+
+  <div id="parent2">
+    Parent
+    <button id="child2">Click Me</button>
+  </div>
+</body>
+
+<script>
+
+  //Event Bubbling is the process where an event first happens on the target (clicked) element and then automatically moves up to its parent elements until it reaches the document.
+  const parent = document.querySelector("#parent");
+  parent.addEventListener("click", () => {
+    console.log("Parent clicked");
+  })
+  const child = document.querySelector("#child");
+  child.addEventListener("click", () => {
+    console.log("Child clicked");
+  })
+  //op : Child clicked
+  //     Parent clicked
+
+
+
+  //event.stopPropagation() is used to prevent the event from moving up the DOM tree.
+
+  const parent2 = document.querySelector("#parent2");
+  parent2.addEventListener("click", () => {
+    console.log("Parent clicked");
+  })
+  const child2 = document.querySelector("#child2");
+  child2.addEventListener("click", (event) => {
+    console.log("Child clicked");
+    event.stopPropagation();
+  })
+  //op : Child clicked
+</script>
+
+</html>
